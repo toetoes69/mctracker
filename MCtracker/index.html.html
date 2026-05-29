@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCTRACKER - Player Lookup</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/skinview3d@3.0.0/bundles/skinview3d.bundle.js"></script>
+</head>
+<body>
+
+    <div class="backgroundMainMenu"></div>
+
+    <audio src="https://vgmdownloads.com/soundtracks/minecraft/yplmcdlu/Volume%20Alpha%20-%2011%20-%20Mice%20on%20Venus.mp3" preload="auto" loop="true" autoplay></audio>
+
+    <audio id="btnAudioClick" type="audio/mpeg"
+        src="https://cdn.discordapp.com/attachments/639163306749198356/681612670016815134/minecraft_click-AudioTrimmer.com.mp3">
+    </audio>
+
+    <div class="app-viewport">
+        <div class="mainMenu">
+            <div class="logo-area">
+                <img src="minecraft-title.png" alt="MCTRACKER" class="minecraft-logo">
+                <div class="subtitle" id="quote">for bedrock and java!</div>
+            </div>
+
+            <div class="menu-controls">
+                <div style="width: 100%; margin-bottom: 12px;">
+                    <input type="text" id="usernameInput" class="mc-input-text" placeholder="Enter player name..." autocomplete="off" />
+                </div>
+
+                <div class="edition-toggle-row">
+                    <input type="radio" id="bedrock" name="edition" value="bedrock" checked>
+                    <label for="bedrock" class="secondBtn" onclick="btnMinecraft();">
+                        <div class="textBtn">Bedrock</div>
+                    </label>
+
+                    <input type="radio" id="java" name="edition" value="java">
+                    <label for="java" class="secondBtn" onclick="btnMinecraft();">
+                        <div class="textBtn">Java</div>
+                    </label>
+                </div>
+
+                <div class="mainBtn" id="searchButton" onclick="btnMinecraft();">
+                    <div class="textBtn">Search Player</div>
+                </div>
+
+                <div class="mainBtn" id="tutorialBtn" onclick="btnMinecraft();">
+                    <div class="textBtn">Help (Skin missing?)</div>
+                </div>
+
+                <div class="mc-info-panel" id="bedrockTutorial" style="display: none;">
+                    <p style="color: #ffff55; margin-top: 0;">💡 <strong>Skin Missing?</strong></p>
+                    <p>If your skin isn't showing up, connect to a crossplay server (like <code style="color: #55ffff;">hoplite.gg</code>) on Bedrock first so the database can fetch it.</p>
+                    <p style="color: #55ff55; margin-bottom: 0;">⏳ <strong>Sync Time:</strong> Databases may take a few hours to update.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="displayPane" id="displayPane" style="display: none;">
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
